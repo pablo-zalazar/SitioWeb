@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: relative;    
+}
+
+/* ------------------------------------------ */
+
+header {
+    height: 50px;
+    background-color: #000;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+header nav {
+    width: 80%;
+    height: max-content;
+    background: #000;
+    position: fixed;
+    left: -100%; 
+}
+
+header nav ul li {
+    display: block;
+    float: none;
+}
+
+header nav ul li a {
+    margin: 0 10px;
+    padding: 20px 5px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 3px solid #fff;
+}
+
+header nav ul li a:hover {
+    color: #78866b;
+    background: none;
+}
+
+.seleccionado {
+    color: #78866b;
+    border-bottom: 4px solid  #78866b;
+}
+
+header .menuBar {
+    height: 100%;
+    background: #000;
+}
+
+header .menuBar div {
+    margin-left: 5px;
+    margin-top: 5px;
+    height: 45px;
+    width: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .menuBar div:active {
+    background-color: #444;
+}
+
+header .menuBar div a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+header .menuBar div a i {
+    color: #fff;
+    background-color: transparent;
+}
+
+/* ------------------------------------------ */
+
+.portada {
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* max-height: 100vh; */
+}
+
+.portada > img {
+    width: 100%;
+    height: 100%;
+}
+
+.portada > button {
+    display: none;
+}
+
+/* ------------------------------------------ */
+
+.serie {
+    position: relative;
+    width: 100%;
+    padding: 5% 0;
+    color: white;
+}
+
+.serie > div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.serie > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.serie > div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.serie h1 {
+    font-size: 26px;    
+}
+
+.serie h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.serie p {
+    font-size: 14px;
+}
+
+/* ------------------------------------------ */
+
+.plataforma {
+    margin: 5% 10%;
+    background-color: #fff;
+}
+
+.plataforma h2 {
+    margin: 10px 0;
+}
+
+.plataforma > div {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #000;
+}
+
+.plataforma iframe .vp-center {
+    background-color: black;
+}
+
+.plataforma > div > * {
+    margin: 10px 0;
+}
+
+.plataforma > div > div > * {
+    margin-bottom: 5px;
+}
+
+.plataforma h2,
+.plataforma h3,
+.plataforma p {
+    font-weight: 700;
+}
+
+.plataforma h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.plataforma h3 {
+    font-size: 18px;
+}
+
+.plataforma p {
+    font-size: 14px;
+}
+
+/* ------------------------------------------ */
+
+.galeria img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -5px;
+}
+
+/* ------------------------------------------ */
+
+.dossier {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dossier img {
+    width: 100%;
+    height: 100%;
+}
+
+.dossier button {
+    font-size: 14px;
+    position: absolute;
+    top: 10%;
+    padding: 10px;
+    border-radius: 25px;
+    border: thin solid transparent;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.dossier button i {
+    display: none;
+}
+
+.dossier button:hover {
+    background-color: #aaa;
+}
+
+.dossier button:active {
+    background-color: #888;
+}
+
+/* ------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+    header nav {
+        width: 100%;
+        height: 50px;
+    }
+
+    header .menuBar {
+        display: none;
+    }    
+
+    header nav ul {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        height: 100%;
+        border-bottom: none;
+    }
+
+    /* ------------------------------- */
+ 
+    .portada > img {
+        content: url("../images/portadaTablet.jpg");
+    }
+
+    .portada > button {
+        display: block;
+        font-size: 16px;
+        position: absolute;
+        width: max-content;
+        bottom: 10%;
+        padding: 10px;
+        background-color: #999;
+        border-radius: 25px;
+        border: thin solid #999;
+        color: #fff;
+        cursor: pointer;
+    }
+    
+    .portada > button:hover {
+        background-color: #666;
+    }
+    
+    .portada > button:active {
+        background-color: #555;
+    }
+
+    .portada > button > i{
+        margin: 0 5px;
+    }
+
+    /* ------------------------------- */
+
+    .serie > img {
+        content: url("../images/serie.jpg");
+    }
+
+    .serie > div {
+        margin-left: 10%;
+        margin-right: 30%;
+        width: 40%;
+    }
+
+    .serie h1 {
+        font-size: 30px;
+    }
+    
+    .serie h3 {
+        font-size: 20px;
+    }
+    
+    .serie p {
+        font-size: 14px;
+    }
+
+    /* ------------------------------- */
+
+    .plataforma > div {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .plataforma > div > * {
+        flex-grow: 1;
+    }
+
+    .plataforma > div > img {
+        width: 40%;
+    }
+
+    .plataforma > div > p {
+        width: 15%;
+        text-align: center;
+    }
+
+    .plataforma > div > div {
+        width: 45%;
+    }
+
+    .plataforma > div > div * {
+        padding-left: 20px;
+    }
+
+    .plataforma p {
+        font-size: 14px;
+    }
+
+    .plataforma h3 {
+        font-size: 20px;
+    }
+
+    .plataforma h2 {
+        font-size: 24px;
+    }
+
+    /* ------------------------------- */
+
+    .galeria {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .galeria img {
+        margin-top: 0;
+    }
+
+    .galeria > div {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0px;
+    }
+
+    .galeria > div:nth-child(odd) {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        grid-gap: 0px;
+    }
+
+    .galeria > div:nth-child(even) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 0px;
+    }
+
+    .galeria > div:nth-child(odd) > div:nth-child(1) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .galeria > div:nth-child(even) > div:nth-child(2) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* ------------------------------- */
+
+    .dossier button i {
+        display: inline;
+        font-size: 32px;
+        margin: 0 10px;
+        vertical-align: -10%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .portada > img {
+        content: url("../images/portada.jpg");
+    }
+
+    /* ------------------------------- */
+
+    .serie h1 {
+        font-size: 4vw;
+    }
+    
+    .serie h3 {
+        font-size: 24px;
+    }
+    
+    .serie p {
+        font-size: 18px;
+    }
+
+    /* ------------------------------- */
+
+    .plataforma p {
+        font-size: 18px;
+    }
+
+    .plataforma h3 {
+        font-size: 24px;
+    }
+
+    .plataforma h2 {
+        font-size: 28px;
+    }
+}
+
+/* ANIMATION */
+.portada > button:hover
+{
+    animation: .3s resaltar linear 0s;
+}
+
+.dossier > button:hover{
+    animation: .3s resaltar2 linear 0s;
+}
+
+@keyframes resaltar{
+    from {background-color: #999;}
+    to {background-color: #666;}
+}
+
+@keyframes resaltar2{
+    from {background-color: transparent;}
+    to {background-color: #aaa;}
+}
+
+
+
