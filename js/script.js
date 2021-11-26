@@ -4,12 +4,12 @@ function main() {
     $('.menuBar a').click(function(){
         if(contador == 1){
             $('nav').animate({
-                left: '0'
+                right: '0'
             });
             contador = 0;
         } else {
             $('nav').animate({
-                left: '-100%'
+                right: '-100%'
             });
             contador = 1;
         }
@@ -31,10 +31,10 @@ $(document).ready(function () {
     cambio();
     function cambio(){
         if ($(window).width() >= 768) {
-            $('nav').css("left", 0);
+            $('nav').css("right", 0);
         }
         if ($(window).width() < 768) {
-            $('nav').css("left", "-100%");
+            $('nav').css("right", "-100%");
             contador = 1;
         }
     }
@@ -47,7 +47,7 @@ $(document).ready(function () {
         if (destino.length == 0) {
           destino = $('html');
         }
-        $('html, body').animate({ scrollTop: destino.offset().top }, 500);
+        $('html, body').animate({ scrollTop: destino.offset().top }, 700);
         return false;
       });
 

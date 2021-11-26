@@ -1,16 +1,87 @@
+@font-face {
+    font-family: "akzidenzgroteskbq-ligcnd";
+    src: url('../fonts/akzidenzgroteskbq-ligcnd.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "AkzidenzGrotesk-MediumCondAlt";
+    src: url('../fonts/AkzidenzGrotesk-MediumCondAlt.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Proxima-Nova-Light";
+    src: url('../fonts/Proxima-Nova-Light.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Proxima-Nova-Regular";
+    src: url('../fonts/Proxima-Nova-Regular.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Proxima-Nova-Medium";
+    src: url('../fonts/Proxima-Nova-Medium.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Proxima-Nova-Bold";
+    src: url('../fonts/Proxima-Nova-Bold.otf');
+    font-display: swap;
+}
+
+
+
+:root {
+    --white: #fff;
+    --green: #78866b;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+nav a,
+.dossier button {
+    font-family: "akzidenzgroteskbq-ligcnd";
+}
+
+.portada button,
+.serie h2,
+.plataforma h2,
+.plataforma h3 {
+    font-family: "AkzidenzGrotesk-MediumCondAlt";
+}
+
+.serie p {
+    font-family: "Proxima-Nova-Light";
+}
+
+.serie h3 {
+    font-family: "Proxima-Nova-Medium";
+}
+
+.plataforma .capitulo-descripcion p {
+    font-family: "Proxima-Nova-Regular";
+}
+
+.plataforma .capitulo-duracion {
+    font-family: "Proxima-Nova-Bold";
+}
+
+/* ------------------------------------------ */
+
 .container {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    position: relative;    
+   width: 100%;
+   max-width:1250px;
+   margin:0 auto;
+   padding: 80px 40px;
 }
 
 /* ------------------------------------------ */
@@ -20,6 +91,7 @@ header {
     background-color: #000;
     position: fixed;
     z-index: 1;
+    top: 0;
     width: 100%;
 }
 
@@ -28,7 +100,7 @@ header nav {
     height: max-content;
     background: #000;
     position: fixed;
-    left: -100%; 
+    right: -100%; 
 }
 
 header nav ul li {
@@ -37,93 +109,95 @@ header nav ul li {
 }
 
 header nav ul li a {
+    font-size: 20px;
     margin: 0 10px;
-    padding: 20px 5px;
+    padding: 15px 5px;
     display: block;
     text-decoration: none;
-    color: #fff;
-    border-bottom: 3px solid #fff;
+    color: var(--green);
 }
 
 header nav ul li a:hover {
-    color: #78866b;
+    color: #aaa;
     background: none;
 }
 
 .seleccionado {
-    color: #78866b;
-    border-bottom: 4px solid  #78866b;
+    color: var(--white);
 }
 
 header .menuBar {
     height: 100%;
-    background: #000;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 header .menuBar div {
-    margin-left: 5px;
-    margin-top: 5px;
-    height: 45px;
-    width: 50px;
+    align-items: center;
     border-radius: 100%;
     display: flex;
+    height: 45px;
     justify-content: center;
-    align-items: center;
+    width: 50px;
 }
 
-header .menuBar div:active {
-    background-color: #444;
-}
-
-header .menuBar div a {
-    color: #fff;
+header .menuBar i{
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
     font-size: 30px;
     cursor: pointer;
 }
 
-header .menuBar div a i {
-    color: #fff;
-    background-color: transparent;
-}
-
 /* ------------------------------------------ */
 
 .portada {
-    margin-top: 50px;
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* max-height: 100vh; */
+    padding-top: 50px;
 }
 
-.portada > img {
+.portada img {
     width: 100%;
     height: 100%;
 }
 
-.portada > button {
+.portada button {
     display: none;
+    background-color: #999;
+    transition: background-color .1s ease-in-out
+}
+
+.portada button:hover {
+    background-color: #666;
 }
 
 /* ------------------------------------------ */
 
 .serie {
-    position: relative;
-    width: 100%;
-    padding: 5% 0;
-    color: white;
+    background: transparent url("../images/serieMovil.jpg") no-repeat center center;
+    background-size: cover;
+    color: var(--white);
 }
 
-.serie > div {
-    width: 80%;
-    margin: 0 auto;
+.serie .content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 250px;
+    width: 40%;
 }
 
-.serie > img {
+.serie .content h3 {
+    margin-bottom: 10px;
+}
+
+.serie img {
     position: absolute;
     top: 0;
     left: 0;
@@ -131,73 +205,72 @@ header .menuBar div a i {
     height: 100%;
 }
 
-.serie > div {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.serie h1 {
-    font-size: 26px;    
+.serie h2 {
+    font-size: 100px;
 }
 
 .serie h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .serie p {
-    font-size: 14px;
+    font-size: 20px;
 }
 
 /* ------------------------------------------ */
 
 .plataforma {
-    margin: 5% 10%;
-    background-color: #fff;
+    background-color: var(--white);
 }
 
-.plataforma h2 {
-    margin: 10px 0;
-}
-
-.plataforma > div {
+.plataforma article {
     padding: 10px 0;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #000;
+    border-top: .1px solid #999;
 }
 
-.plataforma iframe .vp-center {
-    background-color: black;
+.plataforma article > * {
+    margin-top: 10px;
 }
 
-.plataforma > div > * {
-    margin: 10px 0;
+.plataforma article div * {
+    margin-bottom: 10px;
 }
 
-.plataforma > div > div > * {
-    margin-bottom: 5px;
+.plataforma article .capitulo-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.plataforma article .capitulo-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.plataforma h2,
-.plataforma h3,
-.plataforma p {
-    font-weight: 700;
-}
+.plataforma article .capitulo-video { order: 2}
+.plataforma article .capitulo-descripcion { order: 1}
+.plataforma article .capitulo-duracion { order: 3}
 
 .plataforma h2 {
-    font-size: 24px;
     margin: 10px 0;
+    font-size: 50px;
 }
 
 .plataforma h3 {
-    font-size: 18px;
+    font-size: 35px;
 }
 
-.plataforma p {
-    font-size: 14px;
+.plataforma .capitulo-descripcion p {
+    font-size: 20px;
+}
+
+.plataforma .capitulo-duracion {
+    font-size: 25px;
 }
 
 /* ------------------------------------------ */
@@ -213,6 +286,7 @@ header .menuBar div a i {
 .dossier {
     position: relative;
     width: 100%;
+    height: 50vw;;
     display: flex;
     justify-content: center;
 }
@@ -223,17 +297,25 @@ header .menuBar div a i {
 }
 
 .dossier button {
-    font-size: 14px;
+    font-size: 25px;
     position: absolute;
-    top: 10%;
-    padding: 10px;
+    top: 50px;
+    padding: 10px 20px;
     border-radius: 25px;
     border: thin solid transparent;
-    color: #fff;
+    color: var(--white);
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid var(--white);
     cursor: pointer;
     vertical-align: middle;
+}
+
+.dossier button {
+    background-color:transparent;
+    transition: background-color .1s ease-in-out
+}
+.dossier button:hover {
+    background-color: #aaa;
 }
 
 .dossier button i {
@@ -251,6 +333,10 @@ header .menuBar div a i {
 /* ------------------------------------------ */
 
 @media screen and (min-width: 768px) {
+    .container {
+        padding: 100px 40px;
+    }
+
     header nav {
         width: 100%;
         height: 50px;
@@ -266,105 +352,76 @@ header .menuBar div a i {
         justify-content: center;
     }
 
-    header nav ul li a {
+    header .menu {
         height: 100%;
         border-bottom: none;
     }
 
     /* ------------------------------- */
  
-    .portada > img {
+    .portada img {
         content: url("../images/portadaTablet.jpg");
     }
 
-    .portada > button {
+    .portada button {
         display: block;
-        font-size: 16px;
+        font-size: 20px;
         position: absolute;
-        width: max-content;
-        bottom: 10%;
-        padding: 10px;
+        bottom: 100px;
+        padding: 10px 20px;
         background-color: #999;
         border-radius: 25px;
         border: thin solid #999;
-        color: #fff;
+        color: var(--white);
         cursor: pointer;
     }
+
+    .portada button i {
+        font-size: 16px;
+    }
     
-    .portada > button:hover {
+    .portada  button:hover {
         background-color: #666;
     }
     
-    .portada > button:active {
+    .portada  button:active {
         background-color: #555;
     }
 
-    .portada > button > i{
+    .portada  button  i{
         margin: 0 5px;
     }
 
     /* ------------------------------- */
 
-    .serie > img {
-        content: url("../images/serie.jpg");
+    .serie {
+        background-image: url("../images/serie.jpg");
     }
 
-    .serie > div {
-        margin-left: 10%;
-        margin-right: 30%;
+    .serie .content {
         width: 40%;
-    }
-
-    .serie h1 {
-        font-size: 30px;
-    }
-    
-    .serie h3 {
-        font-size: 20px;
-    }
-    
-    .serie p {
-        font-size: 14px;
     }
 
     /* ------------------------------- */
 
-    .plataforma > div {
-        flex-direction: row;
+    .plataforma article {
+        display: grid;
+        grid-template-columns: 2fr 3fr 1fr;
+        grid-template-rows: 1fr;
         align-items: center;
+        grid-gap: 20px;
     }
 
-    .plataforma > div > * {
+    .plataforma article .capitulo-video { order: 1}
+    .plataforma article .capitulo-descripcion { order: 2}
+    .plataforma article .capitulo-duracion { order: 3}
+
+    .plataforma article * {
         flex-grow: 1;
     }
-
-    .plataforma > div > img {
-        width: 40%;
-    }
-
-    .plataforma > div > p {
-        width: 15%;
-        text-align: center;
-    }
-
-    .plataforma > div > div {
-        width: 45%;
-    }
-
-    .plataforma > div > div * {
-        padding-left: 20px;
-    }
-
-    .plataforma p {
-        font-size: 14px;
-    }
-
-    .plataforma h3 {
-        font-size: 20px;
-    }
-
-    .plataforma h2 {
-        font-size: 24px;
+        
+    .plataforma .capitulo-duracion {
+        text-align: right;
     }
 
     /* ------------------------------- */
@@ -379,100 +436,99 @@ header .menuBar div a i {
         margin-top: 0;
     }
 
-    .galeria > div {
+    .galeria .content {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-gap: 0px;
     }
 
-    .galeria > div:nth-child(odd) {
+    .galeria .content:nth-child(odd) {
         display: grid;
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr;
-        grid-gap: 0px;
     }
 
-    .galeria > div:nth-child(even) {
+    .galeria .content:nth-child(even) {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 1fr;
-        grid-gap: 0px;
     }
 
-    .galeria > div:nth-child(odd) > div:nth-child(1) {
+    .galeria .content:nth-child(odd) div:nth-child(1) {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .galeria > div:nth-child(even) > div:nth-child(2) {
+    .galeria .content:nth-child(even) div:nth-child(2) {
         display: flex;
         flex-wrap: wrap;
     }
 
     /* ------------------------------- */
 
+    .dossier button {
+        top: 100px;
+        font-size: 30px;
+        padding: 20px 30px;
+        border-radius: 50px;
+    }
+
     .dossier button i {
         display: inline;
-        font-size: 32px;
+        font-size: 40px;
         margin: 0 10px;
         vertical-align: -10%;
     }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1250px){
+    .container {
+        padding: 120px 40px;
+    }
     .portada > img {
         content: url("../images/portada.jpg");
     }
 
+    .portada button {
+        bottom: 120px;
+    }
+
     /* ------------------------------- */
 
-    .serie h1 {
-        font-size: 4vw;
+    .serie h2 {
+        font-size: 148px;
     }
     
     .serie h3 {
-        font-size: 24px;
+        font-size: 30px;
     }
     
     .serie p {
-        font-size: 18px;
+        font-size: 25px;
     }
 
     /* ------------------------------- */
 
-    .plataforma p {
-        font-size: 18px;
-    }
-
-    .plataforma h3 {
-        font-size: 24px;
-    }
-
     .plataforma h2 {
-        font-size: 28px;
+        font-size: 70px;
+    }
+    
+    .plataforma h3 {
+        font-size: 40px;
+    }
+    
+    .plataforma .capitulo-descripcion p {
+        font-size: 25px;
+    }
+    
+    .plataforma .capitulo-duracion {
+        text-align: right;
+        font-size: 30px;
+    }
+
+    /* ------------------------------- */
+
+    .dossier button{
+        top: 120px;
     }
 }
-
-/* ANIMATION */
-.portada > button:hover
-{
-    animation: .3s resaltar linear 0s;
-}
-
-.dossier > button:hover{
-    animation: .3s resaltar2 linear 0s;
-}
-
-@keyframes resaltar{
-    from {background-color: #999;}
-    to {background-color: #666;}
-}
-
-@keyframes resaltar2{
-    from {background-color: transparent;}
-    to {background-color: #aaa;}
-}
-
-
-
