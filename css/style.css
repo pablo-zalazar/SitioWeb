@@ -116,10 +116,10 @@ header nav ul li a {
   color: var(--green);
 }
 
-header nav ul li a:hover {
+/* header nav ul li a:hover {
   color: #aaa;
   background: none;
-}
+} */
 
 .seleccionado {
   color: var(--white);
@@ -361,6 +361,11 @@ header .menuBar i {
   header .menu {
     height: 100%;
     border-bottom: none;
+  }
+
+  header nav ul li a:hover {
+    color: #aaa;
+    background: none;
   }
 
   /* ------------------------------- */
