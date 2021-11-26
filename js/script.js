@@ -43,10 +43,10 @@ $(document).ready(function () {
   });
   cambio();
   function cambio() {
-    if ($(window).width() >= 768) {
+    if ($(window).width() >= 640) {
       $("nav").css("right", 0);
     }
-    if ($(window).width() < 768) {
+    if ($(window).width() < 640) {
       $("nav").css("right", "-100%");
       contador = 1;
     }
