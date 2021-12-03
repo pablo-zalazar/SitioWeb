@@ -114,15 +114,15 @@ header nav ul li a {
   display: block;
   text-decoration: none;
   color: var(--green);
+  cursor: pointer;
 }
-
-/* header nav ul li a:hover {
-  color: #aaa;
-  background: none;
-} */
 
 .seleccionado {
   color: var(--white);
+}
+
+.subrayado {
+  border-bottom: 2px solid var(--white);
 }
 
 header .menuBar {
@@ -328,10 +328,6 @@ header .menuBar i {
   display: none;
 }
 
-.dossier button:hover {
-  background-color: #aaa;
-}
-
 .dossier button:active {
   background-color: #888;
 }
@@ -360,7 +356,6 @@ header .menuBar i {
 
   header .menu {
     height: 100%;
-    border-bottom: none;
   }
 
   header nav ul li a:hover {

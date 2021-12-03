@@ -49,6 +49,10 @@ $(document).ready(function () {
     if ($(window).width() < 640) {
       $("nav").css("right", "-100%");
       contador = 1;
+      var enlaces = document.getElementsByClassName("menu");
+      Array.from(enlaces).forEach((element) => {
+        $(element).removeClass("subrayado");
+      });
     }
   }
 
@@ -68,7 +72,9 @@ $(document).ready(function () {
     var enlaces = document.getElementsByClassName("menu");
     Array.from(enlaces).forEach((element) => {
       $(element).removeClass("seleccionado");
+      $(element).removeClass("subrayado");
     });
     $(this).addClass("seleccionado");
+    if ($(window).width() >= 640) $(this).addClass("subrayado");
   });
 });
